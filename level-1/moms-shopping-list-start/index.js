@@ -1,7 +1,7 @@
 const list = document.getElementById('list');
 const form = document.addItem;
 
-form.addEventListener('submit',(event)=>{
+form.addEventListener('submit',(event)=> {
     event.preventDefault();
     const listItems = form.title.value;
     const item = document.createElement('div');
@@ -42,7 +42,8 @@ form.addEventListener('submit',(event)=>{
         li.appendChild(save);
 
         save.addEventListener("click" ,()=>{
-            item.textContent = editInput.value
+            item.textContent = editInput.value;
+            editInput.remove();
         })
 
        
