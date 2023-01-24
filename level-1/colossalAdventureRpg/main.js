@@ -7,7 +7,7 @@ console.log("It seems you have been mistaken for dead and taken to the land of H
 const playerName = readline.question("Accept eternal torture here or would you rather quest to the surface realm? What is your name mortal? ");
 
 console.log(`
-Hmmmm... ${playerName} could it be? the chosen one? There was once a prophecy spoken by the Oracle Delphi that a warrior by the name of ${playerName} would defeat these foul creatures of the Underworld that cause eternal chaos and prevent reincarnation. The legendary being deemed ${playerName} would be the first to escape the Underworld by claiming the legendary sword -  named "Ikarus" for its winged handle and collecting the keys of life for the portal.  But first to get there, you have to brave the depths of this HELL and survive its challenges.To begin, press 'w' to move forward. Defeat monsters for additional health points, you begin with 250.
+Hmmmm... ${playerName} could it be? the chosen one? There was once a prophecy spoken by the Oracle Delphi that a warrior by the name of ${playerName} would defeat these foul creatures of the Underworld that cause eternal chaos and prevent reincarnation. The legendary being deemed ${playerName} would be the first to escape the Underworld by claiming the legendary sword -  named "Ikarus" for its winged handle and collecting the keys of life for the portal.  But first to get there, you have to brave the depths of this HELL and survive its challenges.To begin, press 'w' to move forward. Defeat monsters for additional health points, you begin with 400hp.
  `);
 
 function enemy (name, hp){
