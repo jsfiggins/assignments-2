@@ -1,0 +1,413 @@
+
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?drzwvm');
+    src:  url('fonts/icomoon.eot?drzwvm#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?drzwvm') format('truetype'),
+      url('fonts/icomoon.woff?drzwvm') format('woff'),
+      url('fonts/icomoon.svg?drzwvm#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'verdemoderna';
+    src:url('verdemoderna.eot');
+    src:url('verdemoderna.eot?#iefix') format('embedded-opentype'),
+      url('verdemoderna.woff') format('woff'),
+      url('verdemoderna.ttf') format('truetype'),
+      url('verdemoderna.svg#verdemoderna') format('svg');
+      font-weight: normal;
+    font-style: normal;
+  }     
+
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 100%;
+    
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-github:before {
+    content: "\e901";
+  }
+  .icon-wheelchair-alt:before {
+    content: "\e900";
+  }
+  .icon-html-five:before {
+    content: "\ea0c";
+  }
+  .icon-css3:before {
+    content: "\eae6";
+  }
+
+.container {
+    font-family:'Libre Baskerville';
+    /* give the container display grid */
+    /* with six rows, 50px high */
+    /* default all cells/children on the left be 2/3 the screen width, and all on the left 1/3 */
+    display:grid;
+    grid-template-rows: repeat(6,auto);
+    grid-template-columns:2fr 1fr;
+    grid-template-areas: 'header sideheader '
+                         'main1 authors'
+                         'main2 links'
+                         'main3 blank'
+                         'footnote footnote'
+                         'icons icons'
+   
+    ;
+}
+
+.sideheader{
+    grid-area: sideheader;
+    height: 500 px;
+    background: #2d6360 50% 0; 
+    background-image: url("images/huntington.jpg");
+    text-align:center;
+    padding-top:50px;
+    padding-left:20px;
+}
+
+.main1{
+    grid-area: main1;
+    padding: 35px 50px 0 75px;
+  }
+
+.main2{
+  padding: 40px 50px 50px 75px;
+  background-color:rgba(120, 168, 140, 0.5);
+  background-image: url("images/bamboo.png");
+}
+
+.main3{
+  padding: 20px 50px 20px 75px;
+}
+   
+.authors {
+    background-color: #edf4f0;
+
+    grid-area: authors;
+}
+
+.links {
+    background-color: rgba(138,188,159,0.5);
+    background-image:url("images/bamboo.png");
+}
+
+.container > div{
+  background-attachment: fixed;
+}
+
+.tabs{
+padding-top:25%;
+}
+.tabs > li > h3{
+  padding-bottom:20px;
+}
+
+header {
+    padding: 20px 0 70px 0;
+    background: #2d6360 50% 0 ;
+    background-attachment: fixed, fixed, fixed, scroll;
+    background-image: url("images/huntington.jpg");
+  }
+  
+  .title{
+    text-align: center;
+    vertical-align: center;
+    padding-top: 50px;
+    height:125px;
+  }
+
+  body {
+    color: #325050;
+    background: #fff;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 80%;
+    margin:0;
+  }
+
+  h1 {
+    padding-top: 0;
+    padding-bottom: 5px;
+    border-bottom: none;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 3.2em;
+    text-transform: uppercase;
+  }
+
+  .listitems{
+    padding-top:25px;
+    padding-bottom:150px;
+  } 
+
+  .designs{
+  width:80%;
+  background:rgba(255,255,255,0.1);
+  height:50px;
+  text-align:left;
+  padding-left:40px;
+  border:transparent;
+  font-family:'Julius Sans One';
+  color:white
+  }
+
+  .arrow{
+    position:relative;
+    bottom:-1.5px;
+    width: 10%;
+    margin-top:20px;
+    height:50px;
+    background:rgba(255,255,255,0.1);
+    border:transparent;
+    color:white;
+    font-family: "verdemoderna";
+    font-size:20px;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
+}     
+
+ .subheader{
+    font-style:italic;
+    color: #e9ece69e;
+    font-size:20px;
+    padding-left:150px;
+ }
+
+.underline{
+  text-decoration: underline dotted; 
+}
+
+ .header1{
+    color:black;
+    font-size: 40px;
+    padding: 10px 10px 10px 150px;
+    background-image: url("images/zen-brush-symbol.png");
+    background-size: 60px;
+    background-repeat: no-repeat;
+    filter: invert(7);
+    background-position: 23%;
+ }
+ 
+ .blank{
+  background-color: #e9ece69e;
+  height:500px;
+ }
+
+ h1, h2 {
+    margin: 0;
+    color: #325050;
+    font-weight: normal;
+    font-size:x-large;
+  }
+
+  h3{
+    margin-bottom:0;
+    padding-top: 0;
+    border-bottom: none;
+    font-family: 'Julius Sans One', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .examples >li >p{
+   padding-top:none;
+   margin-top:0;
+   padding-bottom:15px;
+  }
+
+ .examples > li >p{
+  border-bottom: 1px solid rgb(232, 228, 228);
+}
+
+.tabs > li{
+  border-bottom: 1px solid rgba(45, 44, 44, 0.1);
+}
+
+.slanted{
+  font-style:italic;
+  color:#9eb7a8;
+}
+
+ul{
+  list-style-type:none; 
+}
+
+.footer1{
+    /* make these span the width of the page */
+    grid-area:footnote;
+    height: 200px;
+    font-size: 26px;
+    display:flex;
+    padding-top: 40px;
+    text-align: center;
+    padding-right:20px;
+    background-image:url("images/koi.jpeg");
+    align-items: center;
+    padding-left: 20px;
+}
+
+.footer{
+    /* make these span the width of the page */
+    background-color: #134347;
+   display: flex;
+   align-items: center;
+    grid-area:icons;
+    height:100px;
+}
+
+.footnote{
+  color:#fff;
+  height:100px;
+ 
+  
+}
+
+.symbol{
+  font-size:20px;
+  padding-top:10px;
+  color:#325050;
+}
+
+.symbolc{
+  font-size:20px;
+  font-family: Arial, sans-serif;
+  font-weight:lighter;
+  padding-top:10px;
+  padding-bottom: 4px;
+  color:white;
+}
+
+@media (max-width: 900px){
+    /* use this media query to help these two cells drop to the bottom when screens are smaller */
+  .container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:repeat(8,auto);
+    grid-template-areas: 
+    'header'
+    'sideheader'
+    'main1'
+    'main2'
+    'main3'
+    'footnote'
+    'icons'
+    'authors'
+    'links'
+    ;
+
+  }
+.title{
+  height:50px;
+  
+}
+  .header{
+    grid-area:header;
+  }
+
+  .sideheader{
+    grid-area: sideheader;
+    width:100%;
+    padding-left:0;
+   text-align:center;
+   height:100px;
+   padding-top: 0;
+  }
+
+  .designs{
+    width:80%;
+    padding-left: none;
+    margin-left:none;
+    text-align: center;
+    height:100px;
+  }
+
+  .arrow{
+    width:20%;
+    position:relative;
+    height:100px;
+  }
+
+  .main1{
+    grid-area:main1;
+  }
+
+  .main2{
+    grid-area:main2;
+  }
+
+  .main3{
+    grid-area:main3;
+  }
+
+  .footnote{
+    grid-area:footnote;
+  } 
+
+  .icons{
+    grid-area:icons;
+  }
+
+  .authors {
+      grid-area:authors;
+     column-count: 2;
+     column-gap: 2em;
+    }
+  .listitems{
+    padding-top:0;
+    padding-bottom: 0;
+  }
+   
+    .links {
+      grid-area:links;
+      column-count: 2;
+      column-gap: 2em;
+    }
+    .blank{
+      display:none;
+    }
+  }
+
+/* FLEX */
+/* use flexbox to make the icons behave like css zen garden's social icons */
+.icons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    grid-area:icons;
+}
+
+.icons > div {
+    width: 40px;
+    height: 30px;
+    color:#9eb7a8;
+    border-radius: 50%;
+    text-align:center;
+    border: 1px solid #9eb7a8;
+}
+
+.icon-github:before {
+  content: "\e901";
+}

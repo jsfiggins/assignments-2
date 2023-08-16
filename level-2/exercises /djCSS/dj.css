@@ -1,0 +1,67 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    height:100vh;
+    gap:10px;
+}
+.square{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: 10px;
+    padding: 20px;
+    color: #fff;
+    font-size: 16px;
+    transition-property: all;
+    transition-duration: 2s;
+
+    
+}
+
+#box1:hover {
+    background-color: red;
+    border: 2px solid blue;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 120px;
+    height: 120px;
+    opacity: 0.8;
+}
+
+#box2:hover{
+    background-color: yellow;
+    height: 130px;
+    border-radius:75%
+   
+}
+
+#box3:hover{
+background-color: aqua;
+width: 175px;
+border: 10px dashed yellow;
+}
+
+#box4:hover{
+    height:200px;
+    width:200px;
+    background-color: white;
+    transition-duration: 3s;
+}
+#box5:hover{
+    transform: rotate(360deg);
+    transition-duration: 3s;
+    background-color:yellow;
+    border:90px solid red;
+    border-radius:50%;
+}
+#box6:hover{
+    transform:skew(-40deg);
+    border-radius:50%;
+    border:20px solid blue;
+    transition-duration:4s;
+    background-color: blueviolet;
+    
+}

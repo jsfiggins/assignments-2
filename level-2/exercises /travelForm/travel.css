@@ -1,0 +1,122 @@
+/* apply styles to all form inputs */
+form input, form select {
+    font-size: 16px;
+    padding: 5x;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+   
+  }
+  
+  /* style radio inputs */
+  form input[type="radio"] {
+    padding:10px;
+    appearance: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    vertical-align: middle;
+    position: relative;
+  }
+  
+  form input[type="radio"]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #2196f3;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0;
+  }
+  
+  form input[type="radio"]:checked:before {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+  
+  /* style checkbox inputs */
+  form input[type="checkbox"] {
+   padding:10px;
+    appearance: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    vertical-align: middle;
+    position: relative;
+  }
+  
+  form input[type="checkbox"]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 2px solid #2196f3;
+    transform: translate(-50%, -50%) rotate(45deg);
+    opacity: 0;
+  }
+  
+  form input[type="checkbox"]:checked:before {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+  }
+  
+  /* apply styles to the form elements */
+  form {
+    width: 50%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #333;
+    background-color:palevioletred;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+  }
+  form select{
+    padding: 5px;
+    margin:10px;
+  }
+  
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align:center;
+    color: rgb(221, 135, 14);
+  }
+  
+  button {
+    background-color: #ab3104;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1769aa;
+  }
+  
+  body {
+    background-color: rgb(118, 7, 237);
+  }

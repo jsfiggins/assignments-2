@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Form </title>
+    <link href="travel.css" rel="stylesheet">
+</head>
+<body>
+<h1>Traveler's Information</h1>
+<form name="travel-form">
+   First name: <input name="cust-name" type="text" placeholder="First Name ">
+   Last name: <input name="cust-name" type="text" placeholder="Last Name">
+ Age: <input name="age" type="number" placeholder="AGE">
+ <br>
+ Gender:
+   Male <input name="gender" type ="radio" value="male">
+   Female <input name="gender" type ="radio" value="female">
+   Other <input name="gender" type ="radio" value="other">
+    <br>
+  Destinations:
+   <select name="destination">
+        <option>Athens</option>
+        <option>Albania</option>
+        <option>Atlanta</option>
+    </select>
+    <br>
+    Dietary Restrictions:
+
+    <br>
+
+    Vegan: <input name ="diet" type="checkbox" value="Vegan">
+    Halal:<input name ="diet" type="checkbox" value="Halal">
+    Dairy-Free<input name ="diet" type="checkbox" value="Dairy Free">
+    N/A <input name ="diet" type="checkbox" value="N/A">
+      
+   <button type="submit">Submit</button>
+
+
+</form>
+    
+
+<script src="travel.js"></script>    
+</body>
+</html>

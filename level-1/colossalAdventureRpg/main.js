@@ -46,7 +46,7 @@ let enemyLock= false;
         console.log ("No items have been picked up yet.")
 
         } else if ( gameAction === "q" || playerHealth <0 ){
-            console.log("The Minotaur will feast on your pitiful soul!")
+            console.log("Enjoy eternal suffering!")
             return
         } else {
             console.log ("Please select a valid input")

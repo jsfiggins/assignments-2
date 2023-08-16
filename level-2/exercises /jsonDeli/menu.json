@@ -1,0 +1,62 @@
+{
+    "appetizers":[
+        {
+            "name":"Fried Squidward",
+            "ingredients":["Italian Bread Crumbs", "lemon juice","Beer Batered Squid"],
+            "description":"Fresh Atlantian Squid beer battered and fried served with fresh lemon juice and our sweet marinara sauce"
+        },
+        {
+            "name": "Garlic Knots",
+            "ingredients":["Dough","Garlic","parsley, Parmesan Cheese"],
+            "description":"Your choice of 6 or 12 of our fresh, baked-daily knots tossed in Garlic Butter and Parmesan Cheese, served with marinara sauce"
+        }
+    ],
+    "cold sandwiches":[
+        {
+            "name":"Peanut Butter Jelly Time",
+            "ingredients":["peanut butter","jelly"],
+            "description":"Thick honey infused peanut butter served with your preference of strawberry,grape, or mixed berry preservites "
+        },
+        {
+            "name":"BLT Sandwich",
+            "ingredients":["Bacon","Lettuce","Tomato"],
+            "description":"Served on toasted bread is a bed of Romaine Lettuce, juicy tomatoes, and our crispy applewood smoked bacon"
+        }
+    ],
+    "hot sandwiches":[
+        {
+        "name":"Ham and Swiss",
+        "ingredients":["Ham","Swiss Cheese"],
+        "description":"Hot Honey Baked Ham with melted swiss cheese served with a spiced honey mustard on a warm Brioche Bun"
+        },
+        {
+            "name":"Big Cheese",
+            "ingredients":["Cheddar","Smoked Gouda","Swiss Cheese","tomato"],
+            "description":"A Triple Decker Grilled cheese skyscraper of a sandwhich with a gooey mess of cheese"
+        }
+    ],
+    "desserts":[
+        {
+            "name":"Cocoa Cake",
+            "ingredients":["Chocolate chips","java chips", "chocolate mousse"],
+            "description":"Gooey chocolate ganache cake with a kick of expresso, served with vanilla bean ice cream"
+        },
+        {
+            "name":"Banana Split",
+            "ingredients":["Banana","Icecream Variety", "Chocolate","peanuts"],
+            "description":" Heaping scoops of our Neapolitean Ice Cream served on a banana complete with traditional toppings of chopped peanuts, chocolate sauce, maraschino cherries"
+        }
+    ],
+    "drinks":[
+        {
+            "name": "Hakuna Mojito",
+            "ingredients":["White Rum","soda water","mint","lime juice"],
+            "description":"Refreshing mint and lime is the perfect way to cool down"
+        },
+        {
+            "name":"Shirley T",
+            "ingredients":["Vodka","Orange Liqueur","Cranberry Juice"],
+            "description":"Adult version of a chilhood favorite"
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Pest Control</title>
+    <link href="pests.css" rel="stylesheet">
+</head>
+<body>
+    <div class="title">
+        <div class="title">
+            <img id="logo" src="imagesMario/mario-logo.png" alt="Mario Pest Control Logo">
+        <h1>Pest Control</h1>
+    </div>
+    
+    <form name="baddies">
+        <ul>
+            <li class="goombas">
+                <p>Goombas: 5cc  </p>
+                <p>Quantity: <input name="goombas" type="number"></p>
+                <img src="imagesMario/goomba.png" >
+            </li>
+            <li class="bobombs">
+                <p>Bobombs: 7cc </p>
+                <p>Quantity: <input name="bobombs" type="number"></p>
+                <img src="imagesMario/bombomb.png">
+            </li>
+            <li class="cheepcheeps">
+                <p>Cheeps: 11cc  </p>
+                <p>Quantity: <input name="cheepcheeps" type="number"></p>
+                <img src="imagesMario/cheepcheep.png">
+            </li>
+        </ul>
+                    
+        <button name="submit">Calculate Costs</button>
+        <p>Total Price: <output name="totalPrice" > Coins </output></p>
+    </form>
+    
+    <footer>
+        <p>mariopestboppers@peachesman.com</p>
+        <p>www.mariospestboppers</p>
+        <p>123 Nintendo Wii Ln, CA </p>
+    </footer>
+
+    <script src="mario.js"></script>
+</body>
+</html>
