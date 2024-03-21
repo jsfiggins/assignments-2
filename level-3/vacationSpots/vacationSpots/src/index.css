@@ -1,0 +1,99 @@
+/* Reset box model and set base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background: linear-gradient(45deg, #93E9BE, rgb(2, 30, 2));
+}
+
+.title {
+  text-align: center;
+  margin-top: 50px; /* Adjust the margin as needed */
+  position: relative;
+  width: 100%; /* Take full width of the viewport */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  position: relative;
+}
+
+
+
+/* Style for individual cards */
+.card {
+  width: 400px;
+  height: 500px; /* Set a fixed height for all cards */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Style for the badge */
+.card--badge {
+  background-color:  rgb(42, 103, 42);
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+h1, h2{
+font-family:fantasy;
+
+}
+
+/* Style for the title */
+.card h1 {
+  color: #333333;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+/* Style for the description */
+.card h2 {
+  color: #666666;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+/* Style for the image */
+.cardImage {
+  width: 100%;
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover; /* Adjusted object-fit for a consistent look */
+  border-radius: 8px;
+  margin-top: 15px;
+}
+/* Add styles for each time period */
+.spring {
+  background-color: #a8e6cf; /* Example color for spring */
+}
+
+.summer {
+  background-color: #ffb347; /* Example color for summer */
+}
+
+.fall {
+  background-color: #ff7b25; /* Example color for fall */
+}
+
+.winter {
+  background-color: blue ; /* Example color for winter */
+}
+
