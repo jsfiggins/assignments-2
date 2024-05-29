@@ -1,0 +1,44 @@
+.navBar {
+    
+    overflow: hidden;
+  }
+
+.navBar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .navBar a:hover {
+    background-color: #aa04a5;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .navBar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#3a3b3c;
+    color: white;
+    text-align: center;
+ }
+
+ .lightTheme {
+    background-color: #ffff84;
+    color: #000;
+}
+
+.darkTheme {
+    background-color: #3a3b3c;
+    color: #fff; 
+}

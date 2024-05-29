@@ -4,9 +4,11 @@ import React from "react";
 export default function Header (){
     return(
         <div>
-            <header>
-                <img className="sponge" src=""/>
-                <h1>Meme Generator Header Component </h1>
+            <header className="header">
+                <img className="sponge" src='./src/assets/logoimages/memeLogo.jpg'/>
+
+                <h1 className ="title">Meme Generator</h1>
+                <h4 className="headerComponent">React Project Lvl 3</h4>
 
             </header>
         </div>

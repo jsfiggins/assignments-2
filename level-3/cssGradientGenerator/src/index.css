@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  -webkit-text-stroke: #caee77 1px;
+  
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 900px; /* Add max-width to limit container size */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.cssPreview {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 5px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #f21919;
+  background-color: #caee77;
+}

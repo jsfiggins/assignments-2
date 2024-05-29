@@ -30,7 +30,7 @@ export default function RandomColor(){
         height:"200px",
         backgroundColor:randomColor,
         border:  '5px solid black',
-        margin: '10px'
+        margin: 'auto'
     }
 
     

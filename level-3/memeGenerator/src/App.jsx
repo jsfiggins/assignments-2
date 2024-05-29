@@ -1,14 +1,16 @@
 
 import './App.css';
 import Header from './Header';
+import Meme from './assets/Meme';
 
 function App() {
   
 
   return (
 <div>
-  <Header ></Header>
-  <h1> Meme </h1>
+  <Header />
+
+  <Meme />
 </div>
   )
 }
