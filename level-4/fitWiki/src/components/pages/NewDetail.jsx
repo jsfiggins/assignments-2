@@ -4,6 +4,7 @@ import { exerciseOptions, fetchData } from "../../utils/fetchData";
 
 
 const NewDetail = () => {
+
   const { id } = useParams(); //grabbing id from selected exercise to determine what to display
   const [exerciseDetail, setExerciseDetail] = useState({});
 
@@ -11,7 +12,7 @@ const NewDetail = () => {
     const fetchExerciseData = async () => {
       try {
         const foundExercises = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`, exerciseOptions); //fetching exercise from API based on id 
-        setExerciseDetail(foundExercises); //changing the state responsible for the details of exercise 
+        setExerciseDetail(foundExercises); //changing the state responsible for the details of exercise to those of the requested id
       } catch (error) {
         console.error("Failed to fetch exercise data");
       }
@@ -21,6 +22,9 @@ const NewDetail = () => {
   }, [id]); //runs whenenever the id changes ; i. e whenever a new exercise is searched or bodyPart card clicked on. 
 
   return (
+
+
+
     <div className="exercise-detail-container">
       <h1 className="exercise-title">{exerciseDetail.name}</h1>
       <div className="exercise-image-container">
@@ -47,6 +51,8 @@ const NewDetail = () => {
         </div>
       </div>
     </div>
+
+
   );
 };
 

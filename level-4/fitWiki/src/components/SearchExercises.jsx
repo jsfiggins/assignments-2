@@ -61,7 +61,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart, setLoading, exer
           value={search}
           onChange={(e) => setSearch(e.target.value)} // Update the search state when the user types in the search input
         />
-        <button onClick={() => handleSearch()}> 
+        <button  onClick={() => handleSearch()}> 
          Search
         </button>
       </div>

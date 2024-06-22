@@ -6,7 +6,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart, handleSearch, setSearch }) => (
   <div
     className={`bodyPart-card ${bodyPart === item ? 'active' : ''}`}
     onClick={() => {
-      setBodyPart(item);
+      setBodyPart(item); //update the state of selected body part 
       setSearch(item); // sets search field to body part clicked (item)
       handleSearch(item);// search based on selected body part 
       window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });

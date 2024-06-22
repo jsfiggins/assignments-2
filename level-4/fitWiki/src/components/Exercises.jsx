@@ -4,8 +4,8 @@ import Loader from './Loader';
 import { fetchData, exerciseOptions } from '../utils/fetchData';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [exercisesPerPage] = useState(70);
+  const [currentPage, setCurrentPage] = useState(1); //State initializes and is responsible for pages 
+  const [exercisesPerPage] = useState(70); 
   const [loading, setLoading] = useState(false); // Initialize loading state
 
   useEffect(() => {
@@ -15,17 +15,17 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
         let apiUrl = 'https://exercisedb.p.rapidapi.com/exercises';
         if (bodyPart === 'all' || bodyPart === '') {
-          apiUrl += `?limit=1300`; // Update URL to include limit parameter
+          apiUrl += `?limit=1300`; 
         } else {
-          apiUrl += `/bodyPart/${bodyPart}?limit=1300`; // Update URL to include limit parameter
+          apiUrl += `/bodyPart/${bodyPart}?limit=1300`; 
         }
 
         const exercisesData = await fetchData(apiUrl, exerciseOptions);
-        setExercises(exercisesData);
+        setExercises(exercisesData);// Updates state to include fetched data 
       } catch (error) {
         console.error('Error fetching exercises:', error);
       } finally {
-        setLoading(false); // Set loading state to false after fetching data
+        setLoading(false); // Set loading state to false after fetching data ( gets rid of spinning component )
       }
     };
 

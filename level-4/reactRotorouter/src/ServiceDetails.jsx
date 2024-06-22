@@ -4,6 +4,7 @@ import servicesData from "../servicestData";
 
 
 export default function ServiceDetails (){
+  
 
     const {serviceId} = useParams()
     const foundService = servicesData.find(service => service._id === serviceId) 
@@ -11,6 +12,7 @@ export default function ServiceDetails (){
     //console.log(useParams)
     console.log(foundService)
     console.log(serviceId)
+    
 
 
 
@@ -21,6 +23,8 @@ export default function ServiceDetails (){
          <h1> Detail Page </h1>
          <h3>{foundService.name}-${foundService.price}</h3>
          <p>{foundService.description}</p>
+
+
        </div>
         
         

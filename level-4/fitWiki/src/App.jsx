@@ -10,7 +10,7 @@ import { ExerciseContext } from './components/ExerciseContext';
 
 const App = () => {
   
-  const {exercises,setExercises}=useContext(ExerciseContext)
+  const {exercises,setExercises}=useContext(ExerciseContext) // Allows whole app access to exercises and functions to update them 
   const [bodyPart, setBodyPart] = useState('');
   const [loading, setLoading] = useState(false); // Add loading state
 

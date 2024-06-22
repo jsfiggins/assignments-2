@@ -8,7 +8,7 @@ const ExerciseCard = ({exercise}) => {
 console.log(exercise)
    
     return (
-//Links to corresponding exercise to indvl exercise page
+//Links to corresponding exercise to indvl exercise page that renders the details 
         <Link className="exercise-card" to= {`/exercise/${exercise.id}`}>  
           <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" className="exercise-image" />
           <div className="exercise-info">
