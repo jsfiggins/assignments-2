@@ -1,37 +1,35 @@
-const express = require ("express");
+const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const { expressjwt } = require('express-jwt');
 require('dotenv').config();
 
-
 app.use(express.json()); // looks for a request body then turns it into 'req.body'
-app.use(morgan('dev')); //Logs requests to the console 
+app.use(morgan('dev')); // Logs requests to the console 
 
-
-async function connectToDb(){
-
-    try{
-        await mongoose.connect(process.env.MONGO_URI)
-        console.log('Connected to MongoDB')
-
-    } catch(err){
-        console.log('Failed to connect to MongoDB')
+async function connectToDb() {
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log('Connected to MongoDB');
+    } catch (err) {
+        console.log('Failed to connect to MongoDB');
+        console.log(err);
     }
 }
 
- connectToDb()
-
- app.use('/workout',require('./routes/workoutRouter.js'))
-
-app.use((err,req,res,next)=>{
-    console.log(err)
-    return res.send({errMsg : err.message})
-
-})
+connectToDb();
 
 
+app.use('/api/auth', require('./routes/authRouter.js'));
+app.use('/api/main', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }));
+app.use('/api/main/workout', require('./routes/workoutRouter.js'));
 
- app.listen(7000, ()=>{
-    console.log('Server is running on port 7000');
- })
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send({ errMsg: err.message });
+});
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
+});

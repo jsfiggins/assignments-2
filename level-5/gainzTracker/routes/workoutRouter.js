@@ -5,7 +5,7 @@ const Workout = require('../models/workout');
 // GET all workouts
 workoutRouter.get('/', async (req, res, next) => {
     try {
-        const foundWorkouts = await Workout.find();
+        const foundWorkouts = await Workout.find({ userId: req.auth._id });
         return res.status(200).send(foundWorkouts);
     } catch (error) {
         res.status(500);
@@ -16,6 +16,9 @@ workoutRouter.get('/', async (req, res, next) => {
 // POST a new workout
 workoutRouter.post('/', async (req, res, next) => {
     try {
+        console.log(req.body)
+        req.body.userId = req.auth._id;
+        console.log(req.body)
         const newWorkout = new Workout(req.body);
         const savedWorkout = await newWorkout.save();
         return res.status(201).send(savedWorkout);

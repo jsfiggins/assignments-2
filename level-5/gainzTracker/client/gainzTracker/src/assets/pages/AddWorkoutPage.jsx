@@ -6,8 +6,8 @@ const AddWorkoutPage = () => {
   const { addWorkout } = useContext(WorkoutContext);
 
   return (
-    <div>
-      <h1>Add Workout</h1>
+    <div className="add-workout-page">
+      <h1 className="title">Add Workout</h1>
       <AddWorkoutForm submit={addWorkout} btnText="Save Workout" />
     </div>
   );

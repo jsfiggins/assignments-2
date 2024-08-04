@@ -1,16 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function NavBar() {
-    return (
-        <nav className="navbar">
-            <ul>
+function Navbar(props) {
+  const { logout } = props;
 
-                <li> <Link to="/" className="nav-link">Home</Link> </li>
-                <li>  <Link to="/add" className="nav-link"> New Entry</Link> </li>
-                <li> <Link to="/log" className="nav-link">View Past Workouts </Link> </li>
-
-            </ul>
-        </nav>
-    )
+  return (
+    <div id="navbar" className="navbar">
+      <Link to="/home"><button className="navbar-button">Home</button></Link>
+      <Link to="/log"><button className="navbar-button">View Past Workouts</button></Link>
+      <Link to="/add"><button className="navbar-button">New Entry</button></Link>
+      <Link to="/"><button className="navbar-button" onClick={logout}>Logout</button></Link>
+    </div>
+  );
 }
+
+export default Navbar;

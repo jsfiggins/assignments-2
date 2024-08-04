@@ -1,95 +1,122 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { WorkoutContext } from '../context/WorkoutContext';
 
-export default function AddWorkoutForm({ submit, btnText }) {
+export default function AddWorkoutForm() {
   const initialExercise = { name: '', sets: [{ setCount: 1, reps: '', weight: '' }], restTime: '', notes: '' };
-  const [exercises, setExercises] = useState([initialExercise]);
+  const initialWorkout = { date: '', exercises: [initialExercise] };
+  const [workout, setWorkout] = useState(initialWorkout);
+  const { addWorkout } = useContext(WorkoutContext);
 
-  function handleExerciseChange(index, e) {
+  function handleExerciseChange(e, exerciseIndex, setIndex) {
     const { name, value } = e.target;
-    const updatedExercises = [...exercises];
-    updatedExercises[index][name] = value;
-    setExercises(updatedExercises);
-  }
+    const [field, subField] = name.split('.');
 
-  function handleSetChange(exerciseIndex, setIndex, e) {
-    const { name, value } = e.target;
-    const updatedExercises = [...exercises];
-    updatedExercises[exerciseIndex].sets[setIndex][name] = value;
-    setExercises(updatedExercises);
-  }
+    setWorkout(prevWorkout => {
+      const newExercises = [...prevWorkout.exercises];
+      const updatedExercise = { ...newExercises[exerciseIndex] };
+      
+      if (subField) {
+        const newSets = [...updatedExercise.sets];
+        newSets[setIndex] = {
+          ...newSets[setIndex],
+          [subField]: value
+        };
+        updatedExercise.sets = newSets;
+      } else {
+        updatedExercise[field] = value;
+      }
 
-  function addExercise() {
-    setExercises([...exercises, initialExercise]);
-  }
-
-  function addSet(exerciseIndex) {
-    const updatedExercises = [...exercises];
-    const newSetCount = updatedExercises[exerciseIndex].sets.length + 1;
-    updatedExercises[exerciseIndex].sets.push({ setCount: newSetCount, reps: '', weight: '' });
-    setExercises(updatedExercises);
+      newExercises[exerciseIndex] = updatedExercise;
+      return { ...prevWorkout, exercises: newExercises };
+    });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    const formattedData = { exercises };
-    submit(formattedData);
-    setExercises([initialExercise]); // Reset form after submission
+    addWorkout({ ...workout, date: new Date().toISOString() });
+    setWorkout(initialWorkout); // Reset form after submission
+  }
+
+  function addExercise() {
+    setWorkout(prevWorkout => ({
+      ...prevWorkout,
+      exercises: [...prevWorkout.exercises, initialExercise]
+    }));
+  }
+
+  function addSet(exerciseIndex) {
+    setWorkout(prevWorkout => {
+      const newExercises = [...prevWorkout.exercises];
+      const newSets = [
+        ...newExercises[exerciseIndex].sets,
+        { setCount: newExercises[exerciseIndex].sets.length + 1, reps: '', weight: '' }
+      ];
+      newExercises[exerciseIndex] = { ...newExercises[exerciseIndex], sets: newSets };
+      return { ...prevWorkout, exercises: newExercises };
+    });
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      {exercises.map((exercise, exerciseIndex) => (
-        <div key={exerciseIndex}>
+      {workout.exercises.map((exercise, exerciseIndex) => (
+        <div key={exerciseIndex} className="exercise-group">
           <input
             type="text"
             name="name"
             value={exercise.name}
-            onChange={(e) => handleExerciseChange(exerciseIndex, e)}
+            onChange={(e) => handleExerciseChange(e, exerciseIndex)}
             placeholder="Exercise Name"
-            required
+            className="input-field"
           />
-          <div>
-            {exercise.sets.map((set, setIndex) => (
-              <div key={setIndex}>
-                <input
-                  type="number"
-                  name="reps"
-                  value={set.reps}
-                  onChange={(e) => handleSetChange(exerciseIndex, setIndex, e)}
-                  placeholder="Reps"
-                  required
-                />
-                <input
-                  type="number"
-                  name="weight"
-                  value={set.weight}
-                  onChange={(e) => handleSetChange(exerciseIndex, setIndex, e)}
-                  placeholder="Weight"
-                  required
-                />
-              </div>
-            ))}
-            <button type="button" onClick={() => addSet(exerciseIndex)}>Add Set</button>
-          </div>
+          {exercise.sets.map((set, setIndex) => (
+            <div key={setIndex} className="set-group">
+              <input
+                type="number"
+                name="sets.setCount"
+                value={set.setCount}
+                onChange={(e) => handleExerciseChange(e, exerciseIndex, setIndex)}
+                placeholder="Set Number"
+                className="input-field"
+              />
+              <input
+                type="number"
+                name="sets.reps"
+                value={set.reps}
+                onChange={(e) => handleExerciseChange(e, exerciseIndex, setIndex)}
+                placeholder="Reps"
+                className="input-field"
+              />
+              <input
+                type="number"
+                name="sets.weight"
+                value={set.weight}
+                onChange={(e) => handleExerciseChange(e, exerciseIndex, setIndex)}
+                placeholder="Weight"
+                className="input-field"
+              />
+            </div>
+          ))}
+          <button type="button" onClick={() => addSet(exerciseIndex)} className="add-set-button">Add Set</button>
           <input
             type="text"
             name="restTime"
             value={exercise.restTime}
-            onChange={(e) => handleExerciseChange(exerciseIndex, e)}
+            onChange={(e) => handleExerciseChange(e, exerciseIndex)}
             placeholder="Rest Time"
-            required
+            className="input-field"
           />
           <input
             type="text"
             name="notes"
             value={exercise.notes}
-            onChange={(e) => handleExerciseChange(exerciseIndex, e)}
+            onChange={(e) => handleExerciseChange(e, exerciseIndex)}
             placeholder="Notes"
+            className="input-field"
           />
         </div>
       ))}
-      <button type="button" onClick={addExercise}>Add Exercise</button>
-      <button type="submit">{btnText}</button>
+      <button type="button" onClick={addExercise} className="add-exercise-button">Add Exercise</button>
+      <button type="submit" className="submit-button">Add Workout</button>
     </form>
   );
 }

@@ -6,8 +6,8 @@ const WorkoutLogPage = () => {
   const { workouts, deleteWorkout } = useContext(WorkoutContext);
 
   return (
-    <div>
-      <h1>Workout Log</h1>
+    <div className="workout-log-page">
+      <h1 className="title">Workout Log</h1>
       <div className="workout-list">
         {workouts.map(workout => (
           <WorkoutCard

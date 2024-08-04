@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WorkoutCard = ({ workout, deleteWorkout, editWorkout }) => {
+const WorkoutCard = ({ workout, deleteWorkout }) => {
   const { _id, date, exercises } = workout;
 
   return (
@@ -23,8 +23,6 @@ const WorkoutCard = ({ workout, deleteWorkout, editWorkout }) => {
         ))}
       </ul>
       <button onClick={() => deleteWorkout(_id)}>Delete</button>
-      {/* Optionally, include an edit button */}
-      {/* <button onClick={() => editWorkout(workout)}>Edit</button> */}
     </div>
   );
 };
